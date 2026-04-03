@@ -1,0 +1,35 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run FastAPI Backend",
+			"type": "shell",
+			"command": "/home/daniel/development/CALCULATOR/.venv/bin/python",
+			"args": [
+				"-m",
+				"uvicorn",
+				"app.main:app",
+				"--app-dir",
+				"pura_calc_api",
+				"--reload",
+				"--host",
+				"0.0.0.0",
+				"--port",
+				"8000"
+			],
+			"isBackground": true,
+			"group": "build"
+		},
+		{
+			"label": "Run Flutter Linux App",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"-lc",
+				"cd /home/daniel/development/CALCULATOR/pura_calc_flutter && flutter run -d linux"
+			],
+			"isBackground": true,
+			"group": "build"
+		}
+	]
+}
